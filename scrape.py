@@ -67,7 +67,13 @@ def scrape_data_extreme_station():
         return
 
     soup = BeautifulSoup(res.text, "html.parser")
-    csrf_token = soup.find("meta", attrs={"name": "csrf-token"})["content"]
+    
+    csrf_token = [
+        soup.find("meta", attrs={"name": "csrf-token"}),
+        soup.find("input", attrs={"name": "_token"})
+    ]
+    csrf_token = csrf_token[0]['content'] if csrf_token[0] else csrf_token[1]['value'] if csrf_token[1] else None
+    
     if not csrf_token:
         logging.error("CSRF token not found.")
         return
