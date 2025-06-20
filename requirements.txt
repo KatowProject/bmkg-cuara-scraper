@@ -1,4 +1,3 @@
-keyboard
 prompt-toolkit
 requests
 beautifulsoup4
