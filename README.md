@@ -13,5 +13,12 @@ pip install -r requirements.txt
 
 ## Usage
 ```bash
-python3 scraper.py
+python3 scrape.py
 ```
+
+## How to Get Cookies
+1. Open your web browser and go to the BMKG website.
+2. Log in to your account.
+3. Open the developer tools (usually F12).
+4. Go to console and type `document.cookie`.
+5. Copy the cookies and paste them into the `cookies.txt` file in the same directory as `scrape.py`.
